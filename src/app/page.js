@@ -16,14 +16,11 @@ export default function Home() {
           </div>
           <div className={styles.heroVideo}>
             <div className={styles.videoContainer}>
-              <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Eduni Introduction"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className={styles.youtubeVideo}
-              ></iframe>
+              <img 
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=360&fit=crop" 
+                alt="Modern classroom with technology"
+                className={styles.heroImage}
+              />
             </div>
           </div>
         </div>
