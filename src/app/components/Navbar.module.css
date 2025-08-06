@@ -1,14 +1,18 @@
 .navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  width: 100%;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -17,23 +21,73 @@
   height: 70px;
 }
 
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  background: #2563eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.logoSymbol {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+}
+
+
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.logoLetter {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
 }
 
 .logoText {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: white;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #2d3748;
   text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  letter-spacing: 3px;
+  position: relative;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  text-transform: uppercase;
 }
 
-.logoText:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+.logoText::after {
+  display: none;
+}
+
+.logo:hover .logoText::after {
+  width: 100%;
 }
 
 .navLinks {
@@ -43,7 +97,7 @@
 }
 
 .navLink {
-  color: white;
+  color: #333;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -53,8 +107,7 @@
 }
 
 .navLink:hover {
-  color: #f0f0f0;
-  transform: translateY(-2px);
+  color: #2563eb;
 }
 
 .navLink::after {
@@ -64,7 +117,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: white;
+  background-color: #2563eb;
   transition: width 0.3s ease;
 }
 
@@ -75,24 +128,42 @@
 .authSection {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-.loginButton {
-  background: rgba(255, 255, 255, 0.2);
+.joinButton {
+  background: #2563eb;
   color: white;
+  border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.joinButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.loginButton {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .loginButton:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #2563eb;
+  color: white;
+  transform: translateY(-1px);
 }
 
 /* Mobile responsive */
@@ -101,15 +172,36 @@
     padding: 0 1rem;
   }
   
+  .logoSection {
+    gap: 1rem;
+  }
+  
   .navLinks {
     display: none;
   }
   
+  .logoIcon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .logoSymbol {
+    width: 20px;
+    height: 20px;
+  }
+  
+
+  
   .logoText {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .loginButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .joinButton {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
@@ -123,5 +215,9 @@
   
   .navLink {
     font-size: 0.9rem;
+  }
+  
+  .logoSection {
+    gap: 1.5rem;
   }
 } 

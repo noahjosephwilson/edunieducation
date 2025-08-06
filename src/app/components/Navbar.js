@@ -7,30 +7,30 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <Link href="/">
+        <div className={styles.logoSection}>
+          <Link href="/" className={styles.logo}>
+            <div className={styles.logoIcon}>
+              <div className={styles.logoSymbol}></div>
+            </div>
             <span className={styles.logoText}>Eduni</span>
           </Link>
-        </div>
-        
-        <div className={styles.navLinks}>
-          <Link href="/courses" className={styles.navLink}>
-            Courses
-          </Link>
-          <Link href="/about" className={styles.navLink}>
-            About
-          </Link>
-          <Link href="/contact" className={styles.navLink}>
-            Contact
-          </Link>
-          <Link href="/resources" className={styles.navLink}>
-            Resources
-          </Link>
+          
+          <div className={styles.navLinks}>
+            <Link href="/courses" className={styles.navLink}>
+              Courses
+            </Link>
+            <Link href="/contact" className={styles.navLink}>
+              Contact
+            </Link>
+          </div>
         </div>
         
         <div className={styles.authSection}>
           <Link href="/login" className={styles.loginButton}>
-            Login
+            Log In
+          </Link>
+          <Link href="/join-prelist" className={styles.joinButton}>
+            Join Prelist
           </Link>
         </div>
       </div>
